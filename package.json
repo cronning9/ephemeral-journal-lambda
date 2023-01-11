@@ -1,0 +1,8 @@
+{
+  "name": "ephemeral-journal-lambda",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://us-east-2.console.aws.amazon.com/lambda/home?region=us-east-2#/functions/ephemeral-journal-lambda?tab=code",
+  "author": "Chris Ronning <christopher.a.ronning@gmail.com>",
+  "license": "MIT"
+}
