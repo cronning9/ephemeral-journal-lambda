@@ -9,6 +9,9 @@
     "aws-sdk": "^2.1300.0"
   },
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "docker:build": "docker build -t ephemeral-journal-lambda .",
+    "docker:run": "docker run -p 9000:8000 ephemeral-journal-lambda:latest",
+    "build": "./pkg.sh"
   }
 }
