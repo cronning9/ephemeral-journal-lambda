@@ -17,11 +17,16 @@ WORKDIR /var/task
 
 FROM public.ecr.aws/lambda/nodejs:12
 
-# Copy function code
+# Copy function code and dependencies
+COPY package.json ./
+COPY yarn.lock ./
 COPY index.js ${LAMBDA_TASK_ROOT}
+
+# Install dependencies
+RUN npm install -g yarn
+RUN yarn
 
 # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
 CMD [ "app.handler" ]
 
-
-ENTRYPOINT ["/index.js"]
+ENTRYPOINT ["yarn", "start"]
