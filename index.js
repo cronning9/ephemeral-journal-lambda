@@ -1,4 +1,4 @@
-console.log('Loading function');
+console.log('Loading function sir!!');
 
 const aws = require('aws-sdk');
 
