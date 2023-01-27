@@ -16,6 +16,7 @@
                 "x-amz-request-id": "EXAMPLE123456789",
                 "x-amz-id-2": "EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH"
             },
+            "requestType": "readFile",
             "s3": {
                 "s3SchemaVersion": "1.0",
                 "configurationId": "testConfigRule",
