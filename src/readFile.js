@@ -1,9 +1,9 @@
 const aws = require('aws-sdk');
 const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
-module.exports = async (ruquestBody) => {
-	const bucket = ruquestBody.bucketName;
-	const key = decodeURIComponent(ruquestBody.objectKey.replace(/\+/g, ' '));
+module.exports = async (requestBody) => {
+	const bucket = requestBody.bucketName;
+	const key = decodeURIComponent(requestBody.objectKey.replace(/\+/g, ' '));
 	const params = {
 		Bucket: bucket,
 		Key: key,
