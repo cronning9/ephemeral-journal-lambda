@@ -6,8 +6,9 @@ const eventTypes = {
 
 module.exports.eventTypes = eventTypes;
 
-module.exports.dispatchEvent = (event) => {
+module.exports.dispatchEvent = async (event) => {
 	const requestType = event.body.requestType;
 	const func = eventTypes[requestType];
-	return func ? func(event.body) : '404 Not Found'
+	const res = func ? await func(event.body) : { statusCode: 400}
+	return res;
 };

@@ -10,8 +10,11 @@ module.exports = async (requestBody) => {
 	};
 	try {
 		const res = await s3.getObject(params).promise();
-		const body = res.Body.toString();
-		return body;
+		const text = res.Body.toString();
+		return {
+			size: text.length,
+			content: text
+		};
 	} catch (err) {
 		console.error(err);
 		const message = `Error getting object ${key} from bucket ${bucket}. Make sure they exist and your bucket is in the same region as this function.`;
