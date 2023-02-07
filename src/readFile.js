@@ -19,7 +19,12 @@ async function readFile(requestBody) {
 		console.error(err);
 		const message = `Error getting object ${key} from bucket ${bucket}. Make sure they exist and your bucket is in the same region as this function.`;
 		console.error(message);
-		throw new Error(message);
+		return {
+			size: message.length,
+			content: message,
+			details: err,
+			statusCode: 500
+		}
 	}
 }
 

@@ -6,7 +6,6 @@ const eventTypes = {
 
 async function dispatchEvent(event) {
 	const requestType = event.body.requestType;
-	console.log(requestType)
 	const func = eventTypes[requestType];
 	const res = func ? await func(event.body) : { statusCode: 400 };
 	return res;
