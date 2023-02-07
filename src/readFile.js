@@ -1,7 +1,7 @@
 const aws = require('aws-sdk');
 const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
-module.exports = async (requestBody) => {
+async function readFile(requestBody) {
 	const bucket = requestBody.bucketName;
 	const key = decodeURIComponent(requestBody.objectKey.replace(/\+/g, ' '));
 	const params = {
@@ -21,4 +21,8 @@ module.exports = async (requestBody) => {
 		console.error(message);
 		throw new Error(message);
 	}
+}
+
+module.exports = {
+	readFile,
 };

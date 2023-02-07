@@ -1,8 +1,5 @@
-const aws = require('aws-sdk');
 const { ResponseBody } = require('./src/ResponseBody');
-const s3 = new aws.S3({ apiVersion: '2006-03-01' });
-
-const dispatchEvent = require('./src/events').dispatchEvent;
+const { dispatchEvent }= require('./src/events');
 
 
 exports.handler = async (event, context) => {

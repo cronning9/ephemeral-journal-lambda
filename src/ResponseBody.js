@@ -10,4 +10,6 @@ class ResponseBody {
 	}
 }
 
-module.exports.ResponseBody = ResponseBody;
+module.exports = {
+	ResponseBody,
+};
