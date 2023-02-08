@@ -1,5 +1,8 @@
 {
   "name": "ephemeral-journal-lambda",
+  "engines": {
+    "node": ">=14.0.0 <15.0.0"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://us-east-2.console.aws.amazon.com/lambda/home?region=us-east-2#/functions/ephemeral-journal-lambda?tab=code",
