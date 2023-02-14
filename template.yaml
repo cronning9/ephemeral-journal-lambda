@@ -19,4 +19,3 @@ Resources:
   EphemeralJournalBkt:
     Type: 'AWS::S3::Bucket'
     Properties: {}
-    Resource: 'arn:aws:s3:::ephemeral-journal-bkt'
