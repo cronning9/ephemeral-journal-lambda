@@ -5,6 +5,7 @@ Resources:
   EphemeralJournalLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
+      FunctionName: 'ephemeral-journal-lambda'
       Handler: index.handler
       Runtime: nodejs14.x
       CodeUri: .
@@ -12,10 +13,14 @@ Resources:
       MemorySize: 128
       Timeout: 3
       Role: 'arn:aws:iam::458900578489:role/ephemeral-journal-lambda-role'
-      Tags:
-        'lambda-console:blueprint': s3-get-object
     DependsOn:
       - EphemeralJournalBkt
   EphemeralJournalBkt:
     Type: 'AWS::S3::Bucket'
-    Properties: {}
+    Properties: 
+      BucketName: 'ephemeral-journal-bkt'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
