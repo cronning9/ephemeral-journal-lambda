@@ -2,6 +2,12 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: 'AWS::Serverless-2016-10-31'
 Description: Lambda for ephemeral-journal project. Handles read and write operations.
 Resources:
+  EphemeralJournalApi:
+    Type: 'AWS::Serverless:Api'
+    Properties:
+      Name: Ephemeral Journal API Gateway
+      StageName: Staging
+
   EphemeralJournalLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -13,8 +19,17 @@ Resources:
       MemorySize: 128
       Timeout: 3
       Role: 'arn:aws:iam::458900578489:role/ephemeral-journal-lambda-role'
+      Events:
+        ReadFilePost:
+          Type: Api
+          Properties:
+            Path: '/Entry/Read'
+            Method: post
+            RestApiId:
+              Ref: EphemeralJournalApi
     DependsOn:
       - EphemeralJournalBkt
+
   EphemeralJournalBkt:
     Type: 'AWS::S3::Bucket'
     Properties: 
