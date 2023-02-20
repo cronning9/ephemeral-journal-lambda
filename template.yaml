@@ -3,7 +3,7 @@ Transform: 'AWS::Serverless-2016-10-31'
 Description: Lambda for ephemeral-journal project. Handles read and write operations.
 Resources:
   EphemeralJournalApi:
-    Type: 'AWS::Serverless:Api'
+    Type: 'AWS::Serverless::Api'
     Properties:
       Name: Ephemeral Journal API Gateway
       StageName: Staging
