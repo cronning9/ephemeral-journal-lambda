@@ -7,6 +7,9 @@ Resources:
     Properties:
       Name: Ephemeral Journal API Gateway
       StageName: Staging
+      Origin: '*'
+      Auth:
+        DefaultAuthorizer: AWS_IAM
 
   EphemeralJournalLambda:
     Type: 'AWS::Serverless::Function'
