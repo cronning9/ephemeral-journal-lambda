@@ -7,7 +7,7 @@ Resources:
     Properties:
       Name: Ephemeral Journal API Gateway
       StageName: Staging
-      Origin: '*'
+      Cors: '*'
       Auth:
         DefaultAuthorizer: AWS_IAM
 
