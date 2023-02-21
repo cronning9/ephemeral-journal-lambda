@@ -9,6 +9,16 @@ class ResponseBody {
 		this.statusCode = statusCode;
 		this.isBase64Encoded = isBase64Encoded;
 	}
+
+	toObject() {
+		return {
+			statusCode: this.statusCode,
+			body: this.body,
+			headers: this.headers,
+			isBase64Encoded: this.isBase64Encoded
+		}
+	}
+
 }
 
 module.exports = {
