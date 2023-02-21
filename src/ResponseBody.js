@@ -13,7 +13,7 @@ class ResponseBody {
 	toObject() {
 		return {
 			statusCode: this.statusCode,
-			body: this.body,
+			body: JSON.stringify(this.body),
 			headers: this.headers,
 			isBase64Encoded: this.isBase64Encoded
 		}
