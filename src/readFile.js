@@ -1,13 +1,14 @@
 const aws = require('aws-sdk');
 const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
-async function readFile(requestBody) {
-	const bucket = requestBody.bucketName;
-	const key = decodeURIComponent(requestBody.objectKey.replace(/\+/g, ' '));
-	const params = {
-		Bucket: bucket,
-		Key: key,
-	};
+async function readFile(entryId) {
+		const bucket = process.env.BUCKET;
+		const key = `${entryId}.txt`;
+		const params = {
+			Bucket: bucket,
+			Key: key,
+		};
+	
 	try {
 		const res = await s3.getObject(params).promise();
 		const text = res.Body.toString();

@@ -26,8 +26,8 @@ Resources:
         ReadFilePost:
           Type: Api
           Properties:
-            Path: '/Entry/Read'
-            Method: post
+            Path: '/entry/{entryId}'
+            Method: get
             RestApiId:
               Ref: EphemeralJournalApi
     DependsOn:
