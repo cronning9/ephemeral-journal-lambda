@@ -15,7 +15,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       FunctionName: 'ephemeral-journal-lambda'
-      Handler: index.handler
+      Handler: index.readFile
       Runtime: nodejs14.x
       CodeUri: .
       Description: Lambda for ephemeral-journal project. Handles read and write operations.

@@ -14,6 +14,7 @@
   "scripts": {
     "start": "node ./index.js",
     "start:local": "sam local invoke EphemeralJournalLambda -e ./events/api-event.json",
+    "start:api": "sam local start-api -p 8001",
     "docker:build": "docker build -t ephemeral-journal-lambda .",
     "docker:run": "docker run -p 9000:8000 ephemeral-journal-lambda:latest",
     "build": "./pkg.sh"
